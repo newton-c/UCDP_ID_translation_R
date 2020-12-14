@@ -3,6 +3,12 @@
 This is an attempt at making the translation from new to old, or old to new,
 UCDP actor, conflict, and dyad IDs, a single line in python.
 
+*Note, this is in development and currently has a lot of bugs. This project*
+*is not affiliated with UCDP*
+
+*The dyad_ids currently have duplicates for certain dyads and thus gives*
+*inconsistent results for those dyads.*
+
 ## Usage:
 This package can be installed using `devtools`. with the following lines of
 code:
