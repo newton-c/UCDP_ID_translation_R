@@ -6,7 +6,7 @@
 
 
 new_to_old_actor <- function(id_var) {
-    source('R/dictionaries/actor_ids.R')
+    source('R/actor_ids.R')
     new_ids <- array()
     id_var <- as.numeric(id_var)
     for (i in 1:length(id_var)) {
@@ -21,6 +21,7 @@ new_to_old_actor <- function(id_var) {
 
 
 old_to_new_actor <- function(id_var){
+    source('R/actor_ids.R')
     new_ids <- array()
     for (i in 1:length(id_var)) {
         if (id_var[i] %in% old_to_new_actor_id$keys()) {
@@ -34,7 +35,7 @@ old_to_new_actor <- function(id_var){
 
 
 new_to_old_conflict <- function(id_var) {
-    source('R/dictionaries/conflict_ids.R')
+  source('R/conflict_ids.R')
 	new_ids <- array()
 	for (i in 1:length(id_var)) {
 		if (id_var[i] %in% new_to_old_conflict_id$keys()) {
@@ -48,6 +49,7 @@ new_to_old_conflict <- function(id_var) {
 
 
 old_to_new_conflict <- function(id_var) {
+    source('R/conflict_ids.R')
     new_ids <- array()
     for (i in 1:length(id_var)) {
         if (id_var[i] %in% old_to_new_conflict_id$keys()) {
@@ -61,7 +63,7 @@ old_to_new_conflict <- function(id_var) {
 
 
 new_to_old_dyad <- function(id_var) {
-    source('R/dictionaries/dyad_ids.R')
+  source('R/dyad_ids.R')
 	new_ids <- array()
 	for (i in 1:length(id_var)) {
 		if (id_var[i] %in% new_to_old_dyad_id$keys()) {
@@ -75,7 +77,7 @@ new_to_old_dyad <- function(id_var) {
 
 
 old_to_new_dyad <- function(id_var) {
-    source('R/dictionaries/dyad_ids.R')
+    source('R/dyad_ids.R')
     new_ids <- array()
     for (i in 1:length(id_var)) {
         if (id_var[i] %in% old_to_new_dyad_id$keys()) {
