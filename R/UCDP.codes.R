@@ -1,5 +1,4 @@
 new_to_old_actor <- function(id_var) {
-    #source("R/data-actor_ids.R")
     new_ids <- array()
     for (i in 1:length(id_var)) {
         if (id_var[i] %in% actor_ids$new_id) {
@@ -13,7 +12,6 @@ new_to_old_actor <- function(id_var) {
 
 
 old_to_new_actor <- function(id_var) {
-   # source("R/data-actor_ids.R")
     new_ids <- array()
     for (i in 1:length(id_var)) {
         if (id_var[i] %in% actor_ids$old_id) {
@@ -28,7 +26,6 @@ old_to_new_actor <- function(id_var) {
 
 # conflict ids ----------------------------------------------------------------
 new_to_old_conflict <- function(id_var) {
-   # source("R/data-con_ids.R")
     new_ids <- array()
     for (i in 1:length(id_var)) {
         if (id_var[i] %in% con_ids$new_id) {
@@ -42,7 +39,6 @@ new_to_old_conflict <- function(id_var) {
 
 
 old_to_new_conflict <- function(id_var) {
-  #  source("R/data-con_ids.R")
     new_ids <- array()
     for (i in 1:length(id_var)) {
         if (id_var[i] %in% con_ids$old_id) {
@@ -57,7 +53,6 @@ old_to_new_conflict <- function(id_var) {
 
 # dyad ids --------------------------------------------------------------------
 new_to_old_dyad <- function(id_var) {
- #   source('R/data-dyad_ids.R')
 	new_ids <- array()
 	for (i in 1:length(id_var)) {
 		if (id_var[i] %in% dyad_ids$new_id) {
@@ -71,7 +66,6 @@ new_to_old_dyad <- function(id_var) {
 
 
 old_to_new_dyad <- function(id_var) {
-  #  source('R/data-dyad_ids.R')
 	new_ids <- array()
 	for (i in 1:length(id_var)) {
 		if (id_var[i] %in% dyad_ids$old_id) {

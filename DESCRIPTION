@@ -1,7 +1,7 @@
 Package: UCDP.codes
 Type: Package
 Title: A package to covert between the different codes used in UDCP datasets
-Version: 0.1.1
+Version: 0.1.2
 Author: Chris Newton
 Maintainer: Chris Newton <yourself@somewhere.net>
 Description: AS UCDP has grown it data resources, ID variables have overgone 
