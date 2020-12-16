@@ -1,17 +1,9 @@
-
-# R
-#source('R/dictionaries/actor_ids.R')
-#source('R/dictionaries/conflict_ids.R')
-#source('R/dictionaries/dyad_ids.R')
-
-
 new_to_old_actor <- function(id_var) {
-    source('actor_ids.R')
+    source("R/data-actor_ids.R")
     new_ids <- array()
-    id_var <- as.numeric(id_var)
     for (i in 1:length(id_var)) {
-        if (id_var[i] %in% new_to_old_actor_id$keys()) {
-            new_ids[i] <- new_to_old_actor_id$get(id_var[i])
+        if (id_var[i] %in% actor_ids$new_id) {
+            new_ids[i] <- actor_ids$old_id[actor_ids$new_id == id_var[i]]
         } else {
             new_ids[i] <- NA
         }
@@ -20,12 +12,12 @@ new_to_old_actor <- function(id_var) {
 }
 
 
-old_to_new_actor <- function(id_var){
-    source('actor_ids.R')
+old_to_new_actor <- function(id_var) {
+    source("R/data-actor_ids.R")
     new_ids <- array()
     for (i in 1:length(id_var)) {
-        if (id_var[i] %in% old_to_new_actor_id$keys()) {
-            new_ids[i] <- old_to_new_actor_id$get(id_var[i])
+        if (id_var[i] %in% actor_ids$old_id) {
+            new_ids[i] <- actor_ids$new_id[actor_ids$old_id == id_var[i]]
         } else {
             new_ids[i] <- NA
         }
@@ -34,26 +26,27 @@ old_to_new_actor <- function(id_var){
 }
 
 
+# conflict ids ----------------------------------------------------------------
 new_to_old_conflict <- function(id_var) {
-  source('conflict_ids.R')
-	new_ids <- array()
-	for (i in 1:length(id_var)) {
-		if (id_var[i] %in% new_to_old_conflict_id$keys()) {
-			new_ids[i] <- new_to_old_conflict_id$get(id_var[i])
-		} else {
-			new_ids[i] <- NA
-		}
-	}
-	return(new_ids)
+    source("R/data-con_ids.R")
+    new_ids <- array()
+    for (i in 1:length(id_var)) {
+        if (id_var[i] %in% con_ids$new_id) {
+            new_ids[i] <- con_ids$old_id[con_ids$new_id == id_var[i]]
+        } else {
+            new_ids[i] <- NA
+        }
+    }
+    return(new_ids)
 }
 
 
 old_to_new_conflict <- function(id_var) {
-    source('conflict_ids.R')
+    source("R/data-con_ids.R")
     new_ids <- array()
     for (i in 1:length(id_var)) {
-        if (id_var[i] %in% old_to_new_conflict_id$keys()) {
-            new_ids[i] <- old_to_new_conflict_id$get(id_var[i])
+        if (id_var[i] %in% con_ids$old_id) {
+            new_ids[i] <- con_ids$new_id[con_ids$old_id == id_var[i]]
         } else {
             new_ids[i] <- NA
         }
@@ -62,12 +55,13 @@ old_to_new_conflict <- function(id_var) {
 }
 
 
+# dyad ids --------------------------------------------------------------------
 new_to_old_dyad <- function(id_var) {
-  source('dyad_ids.R')
+    source('R/data-dyad_ids.R')
 	new_ids <- array()
 	for (i in 1:length(id_var)) {
-		if (id_var[i] %in% new_to_old_dyad_id$keys()) {
-			new_ids[i] <- new_to_old_dyad_id$get(id_var[i])
+		if (id_var[i] %in% dyad_ids$new_id) {
+			new_ids[i] <- dyad_ids$old_id[dyad_ids$new_id == id_var[i]]
 		} else {
 			new_ids[i] <- NA
 		}
@@ -77,19 +71,20 @@ new_to_old_dyad <- function(id_var) {
 
 
 old_to_new_dyad <- function(id_var) {
-    source('dyad_ids.R')
-    new_ids <- array()
-    for (i in 1:length(id_var)) {
-        if (id_var[i] %in% old_to_new_dyad_id$keys()) {
-            new_ids[i] <- old_to_new_dyad_id$get(id_var[i])
-        } else {
-            new_ids[i] <- NA
-        }
-    }
-    return(new_ids)
+    source('R/data-dyad_ids.R')
+	new_ids <- array()
+	for (i in 1:length(id_var)) {
+		if (id_var[i] %in% dyad_ids$old_id) {
+			new_ids[i] <- dyad_ids$new_id[dyad_ids$old_id == id_var[i]]
+		} else {
+			new_ids[i] <- NA
+		}
+	}
+	return(new_ids)
 }
 
 
+# main function ---------------------------------------------------------------
 ucdp_ids <- function(id_var, source_id, target_id, code_type) {
     if (source_id == 'new_id' & target_id == 'old_id') {
         if (code_type == 'actor_id') {

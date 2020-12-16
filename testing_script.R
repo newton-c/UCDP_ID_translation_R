@@ -1,4 +1,4 @@
-source('R/UCDP.codes.R')
+#source('R/UCDP.codes.R')
 #library(UCDP.codes)
 dat <- read.csv('ucdp-dyadic-201.csv')
 
