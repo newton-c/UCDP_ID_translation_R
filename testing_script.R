@@ -1,6 +1,6 @@
 #source('R/UCDP.codes.R')
 #library(UCDP.codes)
-dat <- read.csv('ucdp-dyadic-201.csv')
+dat <- read.csv('~/Desktop/code_translations_r_package/ucdp-dyadic-201.csv')
 
 dat$test_id <- ucdp_ids(dat$conflict_id, 'new_id', 'old_id', 'conflict_id')
 dat$new_test_id <- ucdp_ids(dat$test_id, 'old_id', 'new_id', 'conflict_id')
